@@ -1,0 +1,12 @@
+.bg-light {
+  background-color: #343a40!important;
+}
+
+.navbar-light .navbar-brand {
+  color: rgb(255, 255, 255);
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}

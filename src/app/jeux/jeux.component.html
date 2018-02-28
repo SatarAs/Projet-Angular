@@ -1,0 +1,22 @@
+<h1>{{ title }}</h1>
+
+<div class="availableJeux" *ngIf="jeux.length > 1; else noJeux">
+    <p>Il y a {{jeux.length}} jeux dans le catalogue</p>
+  <div class="jeuList" *ngFor="let jeu of jeux" (click)="selectJeux(jeu.id)" JeuHover>
+		<ul>
+			<li class="title">{{ jeu.title }}</li>
+      <li class="description"><strong>Description : </strong>{{ jeu.description }}</li>
+      <li class="picture">{{ jeu.picture }}</li>
+      <li class="editeur"><strong>Editeur</strong>{{ jeu.editeur }}</li>
+			<li class="releaseDate"><strong>Date de production : </strong>{{ jeu.releaseDate | date:"dd MMMM yyyy"}}</li>
+			<li class="type"><strong>Type : </strong>{{ jeu.type }}</li>
+			<li class="available" *ngIf="jeu.available == true "> -- Ce Jeu est disponible -- </li>
+		</ul>
+	</div>
+</div>
+
+<ng-template #noJeux>
+    <div>
+      <p>IL N'Y A PAS DE JEUX DISPONIBLE</p>
+    </div>
+  </ng-template>
